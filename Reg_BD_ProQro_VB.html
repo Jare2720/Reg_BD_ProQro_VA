@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de Clientes</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN para íconos -->
+  <script src="https://kit.fontawesome.com/a2d9a66a26.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Encabezado con Logo -->
+  <header class="bg-white shadow-md p-4 flex justify-center">
+    <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Logo%20ProQro.png" alt="Logo Proyectate en Querétaro" class="h-16">
+  </header>
+
+  <!-- Imagen de Portada -->
+  <div class="w-full">
+    <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Portada%20ppal%20ProQro.jpg" alt="Portada ProQro" class="w-full object-cover max-h-[250px]">
+  </div>
+
+  <!-- Formulario de Registro -->
+  <main class="max-w-lg mx-auto mt-6 bg-white p-6 rounded-2xl shadow-md">
+    <h1 class="text-2xl font-bold mb-4 text-center text-blue-800">Registro de Clientes</h1>
+
+    <form id="clienteForm" class="space-y-4">
+
+      <!-- Nombre Completo -->
+      <div>
+        <label class="block mb-1 font-semibold">Nombre completo</label>
+        <input type="text" name="Nombre" required class="w-full p-2 border rounded-xl" placeholder="Ingresa tu nombre completo">
+      </div>
+
+      <!-- Teléfono -->
+      <div>
+        <label class="block mb-1 font-semibold">Teléfono</label>
+        <input type="tel" name="Telefono" required class="w-full p-2 border rounded-xl" placeholder="Ingresa tu teléfono">
+      </div>
+
+      <!-- Correo Electrónico -->
+      <div>
+        <label class="block mb-1 font-semibold">Correo electrónico</label>
+        <input type="email" name="Correo" required class="w-full p-2 border rounded-xl" placeholder="Ingresa tu correo electrónico">
+      </div>
+
+      <!-- Tipo de Propiedad -->
+      <div>
+        <label class="block mb-1 font-semibold">Tipo de propiedad</label>
+        <select name="Tipo" required class="w-full p-2 border rounded-xl">
+          <option value="">Selecciona</option>
+          <option>Casa</option>
+          <option>Departamento</option>
+          <option>Terreno</option>
+          <option>Comercial</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <!-- Zona de Interés -->
+      <div>
+        <label class="block mb-1 font-semibold">Zona de interés</label>
+        <input type="text" name="Zona" required class="w-full p-2 border rounded-xl" placeholder="Ingresa la zona de interés">
+      </div>
+
+      <!-- Presupuesto -->
+      <div>
+        <label class="block mb-1 font-semibold">Rango de presupuesto</label>
+        <select name="Presupuesto" required class="w-full p-2 border rounded-xl">
+          <option value="">Selecciona</option>
+          <option>Hasta $1M</option>
+          <option>$1M - $2M</option>
+          <option>$2M - $3M</option>
+          <option>Más de $3M</option>
+        </select>
+      </div>
+
+      <!-- ¿Cómo te enteraste? -->
+      <div>
+        <label class="block mb-1 font-semibold">¿Cómo te enteraste de nosotros?</label>
+        <select name="Medio" required class="w-full p-2 border rounded-xl">
+          <option value="">Selecciona</option>
+          <option>Facebook</option>
+          <option>Instagram</option>
+          <option>Página Web</option>
+          <option>Referidos</option>
+          <option>EasyBroker</option>
+          <option>Proppit</option>
+          <option>Remax</option>
+          <option>Lona</option>
+        </select>
+      </div>
+
+      <!-- ¿Vivir o Invertir? -->
+      <div>
+        <label class="block mb-1 font-semibold">¿Buscas para vivir o invertir?</label>
+        <select name="Objetivo" required class="w-full p-2 border rounded-xl">
+          <option value="">Selecciona</option>
+          <option>Vivir</option>
+          <option>Invertir</option>
+          <option>Ambos</option>
+        </select>
+      </div>
+
+      <!-- ¿En cuánto tiempo planeas comprar? -->
+      <div>
+        <label class="block mb-1 font-semibold">¿En cuánto tiempo planeas comprar?</label>
+        <select name="Tiempo" required class="w-full p-2 border rounded-xl">
+          <option value="">Selecciona</option>
+          <option>Inmediato</option>
+          <option>1 a 3 meses</option>
+          <option>4 a 6 meses</option>
+          <option>Más de 6 meses</option>
+        </select>
+      </div>
+
+      <!-- Comentarios adicionales -->
+      <div>
+        <label class="block mb-1 font-semibold">Comentarios adicionales</label>
+        <textarea name="Comentarios" rows="3" class="w-full p-2 border rounded-xl" placeholder="Escribe tus comentarios adicionales"></textarea>
+      </div>
+
+      <!-- Botón de envío -->
+      <div class="text-center">
+        <button type="submit" class="bg-blue-800 text-white px-6 py-2 rounded-2xl hover:bg-blue-700 transition duration-200">
+          <i class="fas fa-paper-plane mr-2"></i>Enviar
+        </button>
+      </div>
+
+      <!-- Mensaje de retroalimentación -->
+      <p id="mensaje" class="text-center mt-4 text-sm"></p>
+
+    </form>
+  </main>
+
+  <!-- Script para manejar el envío del formulario -->
+  <script>
+    const form = document.getElementById("clienteForm");
+    const mensaje = document.getElementById("mensaje");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      mensaje.textContent = "Enviando...";
+      mensaje.className = "text-blue-600 text-center mt-4";
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbwvVx28TONBRyXJalzfraj8OErDPRrcVQAtll7sTGBWQKbDagUDRk6amr6QHJjsd-PF/exec", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (res.ok) {
+          mensaje.textContent = "✅ Registro enviado con éxito.";
+          mensaje.className = "text-green-600 text-center mt-4";
+          form.reset();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          throw new Error("Error en la respuesta del servidor.");
+        }
+      } catch (err) {
+        mensaje.textContent = "❌ Ocurrió un error al enviar el formulario.";
+        mensaje.className = "text-red-600 text-center mt-4";
+      }
+
+      setTimeout(() => {
+        mensaje.textContent = "";
+      }, 20000);
+    });
+  </script>
+
+</body>
+</html>
