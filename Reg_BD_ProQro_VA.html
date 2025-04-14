@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Clientes</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0f1f0db.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-white shadow-md py-4">
+    <div class="container mx-auto flex items-center justify-center px-4">
+      <img src="https://i.imgur.com/Ugu5QxE.png" alt="Logo Proyectate en Querétaro" class="h-16 mr-4">
+      <h1 class="text-2xl font-bold text-blue-700">Registro de Clientes</h1>
+    </div>
+  </header>
+
+  <main class="flex items-center justify-center py-10 px-4">
+    <div class="w-full max-w-2xl bg-white p-6 rounded-2xl shadow-lg">
+      <form id="clientForm" class="space-y-4">
+        <!-- Nombre -->
+        <div>
+          <label class="block mb-1 font-semibold" for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required class="w-full p-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        </div>
+
+        <!-- Teléfono -->
+        <div>
+          <label class="block mb-1 font-semibold" for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10,}" class="w-full p-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        </div>
+
+        <!-- Correo -->
+        <div>
+          <label class="block mb-1 font-semibold" for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required class="w-full p-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        </div>
+
+        <!-- Tipo de propiedad -->
+        <div>
+          <label class="block mb-1 font-semibold" for="tipoPropiedad">Tipo de propiedad</label>
+          <select id="tipoPropiedad" name="tipoPropiedad" required class="w-full p-2 border rounded-xl">
+            <option value="">Selecciona</option>
+            <option>Casa</option>
+            <option>Departamento</option>
+            <option>Terreno</option>
+            <option>Otro</option>
+          </select>
+        </div>
+
+        <!-- Zona de interés -->
+        <div>
+          <label class="block mb-1 font-semibold" for="zona">Zona de interés</label>
+          <input type="text" id="zona" name="zona" class="w-full p-2 border rounded-xl" />
+        </div>
+
+        <!-- Rango de precio -->
+        <div>
+          <label class="block mb-1 font-semibold" for="precio">Rango de precio</label>
+          <select id="precio" name="precio" required class="w-full p-2 border rounded-xl">
+            <option value="">Selecciona</option>
+            <option>Hasta $1M</option>
+            <option>$1M - $2M</option>
+            <option>$2M - $3M</option>
+            <option>Más de $3M</option>
+          </select>
+        </div>
+
+        <!-- ¿Cómo se enteró? -->
+        <div>
+          <label class="block mb-1 font-semibold" for="origen">¿Cómo te enteraste de nosotros?</label>
+          <select id="origen" name="origen" required class="w-full p-2 border rounded-xl">
+            <option value="">Selecciona</option>
+            <option>Facebook</option>
+            <option>Instagram</option>
+            <option>Página Web</option>
+            <option>Referidos</option>
+            <option>EasyBroker</option>
+            <option>Proppit</option>
+            <option>Lona</option>
+          </select>
+        </div>
+
+        <!-- ¿Para vivir o invertir? -->
+        <div>
+          <label class="block mb-1 font-semibold" for="motivo">¿Buscas para vivir o invertir?</label>
+          <select id="motivo" name="motivo" required class="w-full p-2 border rounded-xl">
+            <option value="">Selecciona</option>
+            <option>Vivir</option>
+            <option>Invertir</option>
+            <option>Ambos</option>
+          </select>
+        </div>
+
+        <!-- ¿En cuánto tiempo? -->
+        <div>
+          <label class="block mb-1 font-semibold" for="tiempo">¿En cuánto tiempo planeas comprar?</label>
+          <select id="tiempo" name="tiempo" required class="w-full p-2 border rounded-xl">
+            <option value="">Selecciona</option>
+            <option>Inmediato</option>
+            <option>1 a 3 meses</option>
+            <option>4 a 6 meses</option>
+            <option>Más de 6 meses</option>
+          </select>
+        </div>
+
+        <!-- Comentarios -->
+        <div>
+          <label class="block mb-1 font-semibold" for="comentarios">Comentarios adicionales</label>
+          <textarea id="comentarios" name="comentarios" rows="3" class="w-full p-2 border rounded-xl"></textarea>
+        </div>
+
+        <!-- Mensaje -->
+        <div id="mensaje" class="text-center text-sm font-medium mt-2 h-5"></div>
+
+        <!-- Botón -->
+        <div class="text-center">
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-xl transition duration-300">
+            <i class="fas fa-paper-plane mr-2"></i>Enviar registro
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById("clientForm");
+    const mensaje = document.getElementById("mensaje");
+    const endpoint = "https://script.google.com/macros/s/AKfycbwvVx28TONBRyXJalzfraj8OErDPRrcVQAtll7sTGBWQKbDagUDRk6amr6QHJjsd-PF/exec";
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      mensaje.textContent = "Enviando...";
+      mensaje.className = "text-center text-yellow-600";
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          body: formData
+        });
+
+        if (res.ok) {
+          mensaje.textContent = "✅ Registro enviado con éxito.";
+          mensaje.className = "text-center text-green-600";
+          form.reset();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+
+          setTimeout(() => mensaje.textContent = "", 20000);
+        } else {
+          throw new Error("Error en el envío");
+        }
+      } catch (err) {
+        mensaje.textContent = "❌ Ocurrió un error al enviar el formulario.";
+        mensaje.className = "text-center text-red-600";
+        setTimeout(() => mensaje.textContent = "", 20000);
+      }
+    });
+  </script>
+</body>
+</html>
