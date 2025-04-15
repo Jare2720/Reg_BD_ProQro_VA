@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario de Registro | Proyectate en Querétaro</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Efecto de difuminado en el encabezado */
+    .header-bg {
+      background: linear-gradient(to right, #1E3A8A, #0d1d35); /* Azul oscuro con difuminado */
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header con logo a la izquierda y fondo degradado -->
+  <header class="flex items-center justify-between bg-header-bg p-4">
+    <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Logo%20ProQro.png" alt="Logo Proyectate en Querétaro" class="h-12">
+    <span class="text-white text-lg font-semibold">Formulario de Registro</span>
+  </header>
+
+  <!-- Imagen de Portada -->
+  <div class="w-full">
+    <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Portada%20ppal%20ProQro.jpg" alt="Portada ProQro" class="w-full object-cover max-h-[250px] opacity-80">
+  </div>
+
+  <!-- Formulario -->
+  <main class="max-w-lg mx-auto mt-6 bg-white p-6 rounded-2xl shadow-lg">
+    <h1 class="text-2xl font-bold mb-6 text-center text-blue-800">Registro de Clientes</h1>
+
+    <form id="clienteForm" class="space-y-6">
+      <!-- Nombre completo -->
+      <div class="flex items-center">
+        <label for="nombre" class="block w-1/4 text-gray-700">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required class="w-3/4 p-2 border rounded-xl border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+      </div>
+
+      <!-- Teléfono -->
+      <div class="flex items-center">
+        <label for="telefono" class="block w-1/4 text-gray-700">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required class="w-3/4 p-2 border rounded-xl border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+      </div>
+
+      <!-- Correo -->
+      <div class="flex items-center">
+        <label for="correo" class="block w-1/4 text-gray-700">Correo</label>
+        <input type="email" id="correo" name="correo" required class="w-3/4 p-2 border rounded-xl border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+      </div>
+
+      <!-- Tipo de propiedad -->
+      <div class="flex items-center">
+        <label for="tipo" class="block w-1/4 text-gray-700">Tipo de propiedad</label>
+        <select id="tipo" name="tipo" required class="w-3/4 p-2 border rounded-xl border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <option value="" disabled selected>Seleccionar una opción</option> <!-- Opción no seleccionable -->
+          <option value="Casa">Casa</option>
+          <option value="Departamento">Departamento</option>
+          <option value="Terreno">Terreno</option>
+          <option value="Comercial">Comercial</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <!-- Zona de interés -->
+      <div class="flex items-center">
+        <label for="zona" class="block w-1/4 text-gray-700">Zona de interés</label>
+        <input type="text" id="zona" name="zona" required class="w-3/4 p-2 border rounded-xl border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+      </div>
+
+      <!-- Presupuesto -->
+      <div class="flex items-center">
+        <label for="presupuesto" class="block w-1/4 text-gray-700">Presupuesto</label>
+        <select id="presupuesto" name="presupuesto" required class="w-3/4 p-2 border rounded-xl border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <option value="" disabled selected>Seleccionar una opción</option> <!-- Opción no seleccionable -->
+          <option value="Hasta $1M">Hasta $1M</option>
+          <option value="$1M - $2M">$1M - $2M</option>
+          <option value="$2M - $3M">$2M - $3M</option>
+          <option value="Más de $3M">Más de $3M</option>
+        </select>
+      </div>
+
+      <!-- ¿Cómo te enteraste de nosotros? -->
+      <div class="flex items-center">
+        <label for="origen" class="block w-1/4 text-gray-700">¿Cómo te enteraste de nosotros?</label>
+        <select id="origen" name="origen" required class="w-3/4 p-2 border rounded-xl border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <option value="" disabled selected>Seleccionar una opción</option> <!-- Opción no seleccionable -->
+          <option value="Facebook">Facebook</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Página Web">Página Web</option>
+          <option value="Referidos">Referidos</option>
+          <option value="EasyBroker">EasyBroker</option>
+          <option value="Proppit">Proppit</option>
+          <option value="Remax">Remax</option>
+          <option value="Lona">Lona</option>
+        </select>
+      </div>
+
+      <!-- ¿Buscas para vivir o invertir? -->
+      <div class="flex items-center">
+        <label for="motivo" class="block w-1/4 text-gray-700">¿Buscas para vivir o invertir?</label>
+        <select id="motivo" name="motivo" required class="w-3/4 p-2 border rounded-xl border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <option value="" disabled selected>Seleccionar una opción</option> <!-- Opción no seleccionable -->
+          <option value="Vivir">Vivir</option>
+          <option value="Invertir">Invertir</option>
+          <option value="Ambos">Ambos</option>
+        </select>
+      </div>
+
+      <!-- ¿En cuánto tiempo planeas comprar? -->
+      <div class="flex items-center">
+        <label for="tiempo" class="block w-1/4 text-gray-700">¿En cuánto tiempo planeas comprar?</label>
+        <select id="tiempo" name="tiempo" required class="w-3/4 p-2 border rounded-xl border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <option value="" disabled selected>Seleccionar una opción</option> <!-- Opción no seleccionable -->
+          <option value="Inmediato">Inmediato</option>
+          <option value="1 a 3 meses">1 a 3 meses</option>
+          <option value="4 a 6 meses">4 a 6 meses</option>
+          <option value="Más de 6 meses">Más de 6 meses</option>
+        </select>
+      </div>
+
+      <!-- Comentarios adicionales -->
+      <div class="flex items-center">
+        <label for="comentarios" class="block w-1/4 text-gray-700">Comentarios adicionales</label>
+        <textarea id="comentarios" name="comentarios" class="w-3/4 p-2 border rounded-xl border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+      </div>
+
+      <!-- Botón de envío -->
+      <div class="text-center">
+        <button type="submit" class="bg-blue-800 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition duration-200">
+          Enviar
+        </button>
+      </div>
+
+      <!-- Mensajes de estado -->
+      <p id="mensaje" class="text-center mt-4 text-sm"></p>
+
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById('clienteForm');
+    const mensaje = document.getElementById('mensaje');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      try {
+        const res = await fetch('https://script.google.com/macros/s/AKfycbwvVx28TONBRyXJalzfraj8OErDPRrcVQAtll7sTGBWQKbDagUDRk6amr6QHJjsd-PF/exec', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await res.json();
+        
+        if (data.success) {
+          mensaje.textContent = "¡Registro enviado con éxito! ✅";
+          mensaje.className = "text-green-600 text-center mt-4";
+        } else {
+          mensaje.textContent = "Error en el envío. ❌";
+          mensaje.className = "text-red-600 text-center mt-4";
+        }
+      } catch (error) {
+        mensaje.textContent = "Error en el servidor. ❌";
+        mensaje.className = "text-red-600 text-center mt-4";
+      }
+
+      // Limpiar el formulario
+      form.reset();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
