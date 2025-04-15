@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro de Clientes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Estilos personalizados */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+    }
+    .header {
+      background-color: #0a2e6e; /* Azul oscuro */
+      color: white;
+      padding: 20px;
+    }
+    .header img {
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    .header .text-center h1, .header .text-center p {
+      margin: 0;
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: 40px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .form-container input, .form-container select, .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .form-container button {
+      background-color: #0a2e6e;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .form-container button:hover {
+      background-color: #053f6e;
+    }
+    .form-container select {
+      color: #555;
+    }
+    .form-container option[disabled] {
+      color: #888;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 24px;
+      color: #0a2e6e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header con logo y texto -->
+  <div class="header flex justify-center items-center">
+    <div class="flex flex-col items-center text-center space-y-2">
+      <!-- Logo de la empresa -->
+      <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Logo%20ProQro.png" alt="Logo de la empresa">
+      <!-- Texto al lado del logo -->
+      <div>
+        <h1 class="text-3xl font-bold text-white uppercase">Servicios de Asesoría</h1>
+        <h1 class="text-2xl font-bold text-white uppercase">Inmobiliaria</h1>
+        <p class="text-sm text-white mt-2">Juntos encontraremos el hogar de tus sueños!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario de Registro -->
+  <div class="form-container">
+    <h2 class="text-2xl font-bold mb-4">Formulario de Registro de Clientes</h2>
+    <form id="registroForm">
+      <!-- Nombre completo -->
+      <input type="text" name="nombre" placeholder="Nombre Completo" required>
+
+      <!-- Teléfono -->
+      <input type="tel" name="telefono" placeholder="Número de Teléfono" required>
+
+      <!-- Correo electrónico -->
+      <input type="email" name="correo" placeholder="Correo Electrónico" required>
+
+      <!-- Tipo de propiedad -->
+      <select name="tipo" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="Casa">Casa</option>
+        <option value="Departamento">Departamento</option>
+        <option value="Terreno">Terreno</option>
+        <option value="Comercial">Comercial</option>
+      </select>
+
+      <!-- Zona de interés -->
+      <input type="text" name="zona" placeholder="Zona de Interés" required>
+
+      <!-- Presupuesto estimado -->
+      <input type="number" name="presupuesto" placeholder="Presupuesto Estimado" required>
+
+      <!-- ¿Vivir o Invertir? -->
+      <select name="motivo" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="Vivir">Vivir</option>
+        <option value="Invertir">Invertir</option>
+      </select>
+
+      <!-- ¿Cómo nos conoció? -->
+      <select name="origen" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="Facebook">Facebook</option>
+        <option value="Instagram">Instagram</option>
+        <option value="Sitio web">Sitio Web</option>
+        <option value="Referido">Referido</option>
+        <option value="EasyBroker">EasyBroker</option>
+        <option value="Propppit">Propppit</option>
+        <option value="Lona">Lona</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <!-- Comentarios adicionales -->
+      <textarea name="comentarios" placeholder="Comentarios adicionales"></textarea>
+
+      <!-- Botón de Enviar -->
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Iconos de WhatsApp y Página Web -->
+  <div class="social-icons">
+    <!-- Icono de WhatsApp -->
+    <a href="https://wa.me/525532018918" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1024px-WhatsApp.svg.png" alt="WhatsApp" style="width: 40px;">
+    </a>
+    <!-- Icono de Página Web -->
+    <a href="https://www.proyectatenqro.com" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Proyectate_logo.png" alt="Página Web" style="width: 40px;">
+    </a>
+  </div>
+
+  <script>
+    document.getElementById('registroForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const data = {};
+      
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      fetch('https://script.google.com/macros/s/AKfycbxvZ9P_0jxivXYIwgZvLKSMUWvAW0S0Mvs02HtaxkR2fRcO3SkffvwKF-Z2cXd4Ktwa/exec', {
+        method: 'POST',
+        body: new URLSearchParams(data),
+      })
+      .then(response => response.json())
+      .then(responseData => {
+        if (responseData.success) {
+          alert("¡Registro Exitoso!");
+          document.getElementById('registroForm').reset();
+        } else {
+          alert("Hubo un error, por favor intenta de nuevo.");
+        }
+      })
+      .catch(error => {
+        alert("Error en el servidor: " + error.message);
+      });
+    });
+  </script>
+
+</body>
+</html>
