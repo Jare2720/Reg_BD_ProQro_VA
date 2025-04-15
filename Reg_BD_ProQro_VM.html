@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario de Registro | Proyectate en Querétaro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Fondo azul oscuro en el tope */
+    .header-bg {
+      background-color: #003366; /* Azul oscuro sólido */
+    }
+
+    .form-container {
+      background-color: #F5F5F5;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      color: #333;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 0.375rem;
+      border: 1px solid #ddd;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    select:invalid {
+      color: gray;
+    }
+
+    button {
+      background-color: #003366;
+      color: white;
+      padding: 1rem;
+      border-radius: 1.5rem;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #002244;
+    }
+
+    /* Animación para el texto */
+    .animacion-diagonal {
+      animation: diagonalAnim 4s ease-in-out infinite;
+    }
+
+    @keyframes diagonalAnim {
+      0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(20px) translateY(20px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0) translateY(0);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header con logo y texto animado -->
+  <header class="flex items-center justify-between bg-header-bg p-4">
+    <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Logo%20ProQro.png" alt="Logo Proyectate en Querétaro" class="h-12">
+    <div class="text-white text-center ml-4">
+      <span class="text-xl font-semibold">Servicio de Asesoría Inmobiliaria</span>
+      <br>
+      <span class="text-sm font-medium animacion-diagonal">Juntos encontraremos el hogar de tus sueños!</span>
+    </div>
+  </header>
+
+  <!-- Imagen de Portada -->
+  <div class="w-full">
+    <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Portada%20ppal%20ProQro.jpg" alt="Portada ProQro" class="w-full object-cover max-h-[250px] opacity-80">
+  </div>
+
+  <!-- Formulario -->
+  <main class="max-w-lg mx-auto mt-6 bg-white p-6 rounded-2xl shadow-lg">
+    <h1 class="text-2xl font-bold mb-6 text-center text-blue-800">Registro de Clientes</h1>
+
+    <form id="clienteForm" class="space-y-6" method="POST" action="https://script.google.com/macros/s/AKfycbwvVx28TONBRyXJalzfraj8OErDPRrcVQAtll7sTGBWQKbDagUDRk6amr6QHJjsd-PF/exec">
+      
+      <!-- Nombre completo -->
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required>
+      </div>
+
+      <!-- Correo -->
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+
+      <!-- Tipo de propiedad -->
+      <div class="form-group">
+        <label for="tipo">Tipo de propiedad</label>
+        <select id="tipo" name="tipo" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Casa">Casa</option>
+          <option value="Departamento">Departamento</option>
+          <option value="Terreno">Terreno</option>
+          <option value="Comercial">Comercial</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <!-- Zona de interés -->
+      <div class="form-group">
+        <label for="zona">Zona de interés</label>
+        <input type="text" id="zona" name="zona" required>
+      </div>
+
+      <!-- Presupuesto -->
+      <div class="form-group">
+        <label for="presupuesto">Presupuesto</label>
+        <select id="presupuesto" name="presupuesto" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Hasta $1M">Hasta $1M</option>
+          <option value="$1M - $2M">$1M - $2M</option>
+          <option value="$2M - $3M">$2M - $3M</option>
+          <option value="Más de $3M">Más de $3M</option>
+        </select>
+      </div>
+
+      <!-- ¿Cómo te enteraste de nosotros? -->
+      <div class="form-group">
+        <label for="origen">¿Cómo te enteraste de nosotros?</label>
+        <select id="origen" name="origen" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Página Web">Página Web</option>
+          <option value="Referidos">Referidos</option>
+          <option value="EasyBroker">EasyBroker</option>
+          <option value="Proppit">Proppit</option>
+          <option value="Remax">Remax</option>
+          <option value="Lona">Lona</option>
+        </select>
+      </div>
+
+      <!-- ¿Buscas para vivir o invertir? -->
+      <div class="form-group">
+        <label for="motivo">¿Buscas para vivir o invertir?</label>
+        <select id="motivo" name="motivo" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Vivir">Vivir</option>
+          <option value="Invertir">Invertir</option>
+          <option value="Ambos">Ambos</option>
+        </select>
+      </div>
+
+      <!-- ¿En cuánto tiempo planeas comprar? -->
+      <div class="form-group">
+        <label for="tiempo">¿En cuánto tiempo planeas comprar?</label>
+        <select id="tiempo" name="tiempo" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Inmediato">Inmediato</option>
+          <option value="1 a 3 meses">1 a 3 meses</option>
+          <option value="4 a 6 meses">4 a 6 meses</option>
+          <option value="Más de 6 meses">Más de 6 meses</option>
+        </select>
+      </div>
+
+      <!-- Comentarios adicionales -->
+      <div class="form-group">
+        <label for="comentarios">Comentarios adicionales</label>
+        <textarea id="comentarios" name="comentarios"></textarea>
+      </div>
+
+      <!-- Botón de Enviar -->
+      <button type="submit" id="submitBtn">Enviar</button>
+    </form>
+    
+    <!-- Mensaje de éxito o error -->
+    <div id="message" class="hidden text-center mt-4"></div>
+  </main>
+
+  <script>
+    document.getElementById('clienteForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevenir el envío del formulario
+      const form = event.target;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => response.json())
+      .then(data => {
+        const message = document.getElementById('message');
+        message.classList.remove('hidden');
+        if (data.success) {
+          message.classList.add('text-green-500');
+          message.innerText = 'Registro exitoso.';
+        } else {
+          message.classList.add('text-red-500');
+          message.innerText = 'Hubo un error al enviar el formulario.';
+        }
+      })
+      .catch(() => {
+        const message = document.getElementById('message');
+        message.classList.remove('hidden');
+        message.classList.add('text-red-500');
+        message.innerText = 'Hubo un error al enviar el formulario.';
+      });
+    });
+  </script>
+
+</body>
+</html>
