@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulario de Registro de Clientes</title>
 
-  <!-- Cargando Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -72,7 +71,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="flex justify-between items-center">
       <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Logo%20ProQro.png" alt="Logo ProQro" class="w-32">
@@ -83,7 +81,6 @@
     </div>
   </header>
 
-  <!-- Formulario -->
   <div class="form-container">
     <form id="registroForm">
       <div>
@@ -145,6 +142,16 @@
       </div>
 
       <div>
+        <label class="label" for="objetivo">¿Buscas para vivir o invertir?</label>
+        <select id="objetivo" name="objetivo" required class="input-field">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Vivir">Vivir</option>
+          <option value="Invertir">Invertir</option>
+          <option value="Ambos">Ambos</option>
+        </select>
+      </div>
+
+      <div>
         <label class="label" for="tiempo">¿En cuánto tiempo planeas comprar?</label>
         <select id="tiempo" name="Tiempo de Compra" required class="input-field">
           <option value="" disabled selected>Selecciona una opción</option>
@@ -181,10 +188,10 @@
       .then(data => {
         if (data.success) {
           document.getElementById("message").innerHTML = "Registro enviado con éxito!";
-          document.getElementById("message").className = "message success";
+          document.getElementById("message").classList.add("success");
         } else {
           document.getElementById("message").innerHTML = "Error al enviar el formulario.";
-          document.getElementById("message").className = "message error";
+          document.getElementById("message").classList.add("error");
         }
         event.target.reset();
         setTimeout(() => {
@@ -193,9 +200,10 @@
       })
       .catch(error => {
         document.getElementById("message").innerHTML = "Error en la conexión.";
-        document.getElementById("message").className = "message error";
+        document.getElementById("message").classList.add("error");
       });
     });
   </script>
 </body>
 </html>
+
