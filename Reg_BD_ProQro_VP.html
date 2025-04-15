@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro de Clientes</title>
+
+    <!-- Enlace a Tailwind CSS para estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #003366; /* Azul oscuro */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.5rem;
+        }
+        header .social-icons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        header .social-icons a {
+            margin-left: 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-section {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group select {
+            appearance: none;
+        }
+
+        .form-group select option {
+            color: #555;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background-color: #003366; /* Azul oscuro */
+            color: white;
+            font-size: 1.25rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #0055b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Animación para el texto de contacto */
+        .contact-text {
+            font-size: 1rem;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Logo%20ProQro.png" alt="Logo ProQro" style="height: 50px;">
+    <div class="social-icons">
+        <a href="https://wa.me/525532018918" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.proyectatenqro.com" target="_blank"><i class="fas fa-globe"></i> Sitio Web</a>
+    </div>
+    <div class="contact-text">
+        <p>Servicios de Asesoría Inmobiliaria</p>
+        <p class="font-normal text-sm">Juntos encontraremos el hogar de tus sueños!</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="form-section">
+        <h2 class="form-title">Formulario de Registro de Clientes</h2>
+        <form id="formRegistro" action="https://script.google.com/macros/s/AKfycbwvVx28TONBRyXJalzfraj8OErDPRrcVQAtll7sTGBWQKbDagUDRk6amr6QHJjsd-PF/exec" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" name="telefono" required>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo">Tipo de Propiedad</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Depa">Departamento</option>
+                    <option value="Terreno">Terreno</option>
+                    <option value="Comercial">Comercial</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="zona">Zona de Interés</label>
+                <input type="text" id="zona" name="zona" required>
+            </div>
+
+            <div class="form-group">
+                <label for="presupuesto">Presupuesto Estimado</label>
+                <select id="presupuesto" name="presupuesto" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Hasta 1M">Hasta 1M</option>
+                    <option value="1M - 3M">1M - 3M</option>
+                    <option value="3M - 5M">3M - 5M</option>
+                    <option value="Más de 5M">Más de 5M</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="proposito">¿Buscas para Vivir o Invertir?</label>
+                <select id="proposito" name="proposito" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Vivir">Vivir</option>
+                    <option value="Invertir">Invertir</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comentarios">Comentarios Adicionales</label>
+                <textarea id="comentarios" name="comentarios"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar</button>
+        </form>
+
+        <div id="mensajeExito" class="hidden">
+            <p>¡Registro exitoso!</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const formulario = document.getElementById('formRegistro');
+    const mensajeExito = document.getElementById('mensajeExito');
+
+    formulario.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Enviar el formulario
+        const formData = new FormData(formulario);
+        fetch(formulario.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Mostrar el mensaje de éxito
+                mensajeExito.classList.remove('hidden');
+                formulario.reset();
+            } else {
+                alert('Error al registrar los datos.');
+            }
+        })
+        .catch(error => alert('Error en el servidor.'));
+    });
+</script>
+
+</body>
+</html>
