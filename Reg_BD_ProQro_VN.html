@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro de Clientes</title>
+
+  <!-- Cargando Tailwind CSS a través de CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Estilo personalizado para el fondo azul oscuro en el header */
+    header {
+      background-color: #003366; /* Azul oscuro */
+      color: white;
+      padding: 20px;
+    }
+
+    /* Estilo del formulario */
+    .form-container {
+      background-color: #f3f4f6;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #003366; /* Azul oscuro */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #002244; /* Azul más oscuro al pasar el ratón */
+    }
+
+    .message {
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .message.success {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .message.error {
+      background-color: #F44336;
+      color: white;
+    }
+
+    .label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Header con logo a la izquierda y texto a la derecha -->
+  <header>
+    <div class="flex justify-between items-center">
+      <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Logo%20ProQro.png" alt="Logo ProQro" class="w-32">
+      <div class="text-right text-sm">
+        <p>Servicio de Asesoría Inmobiliaria</p>
+        <p class="text-sm italic">Juntos encontraremos el hogar de tus sueños!</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Formulario de Registro -->
+  <div class="form-container">
+    <form id="registroForm">
+      <div>
+        <label class="label" for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required class="input-field" placeholder="Escribe tu nombre">
+      </div>
+
+      <div>
+        <label class="label" for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required class="input-field" placeholder="Escribe tu teléfono">
+      </div>
+
+      <div>
+        <label class="label" for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required class="input-field" placeholder="Escribe tu correo electrónico">
+      </div>
+
+      <div>
+        <label class="label" for="tipo">Tipo de propiedad</label>
+        <select id="tipo" name="tipo" required class="input-field">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Casa">Casa</option>
+          <option value="Departamento">Departamento</option>
+          <option value="Terreno">Terreno</option>
+          <option value="Comercial">Comercial</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="label" for="zona">Zona de interés</label>
+        <input type="text" id="zona" name="zona" required class="input-field" placeholder="Escribe la zona de interés">
+      </div>
+
+      <div>
+        <label class="label" for="presupuesto">Presupuesto</label>
+        <select id="presupuesto" name="presupuesto" required class="input-field">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Hasta $1M">Hasta $1M</option>
+          <option value="$1M - $2M">$1M - $2M</option>
+          <option value="$2M - $3M">$2M - $3M</option>
+          <option value="Más de $3M">Más de $3M</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="label" for="origen">¿Cómo te enteraste de nosotros?</label>
+        <select id="origen" name="origen" required class="input-field">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Página Web">Página Web</option>
+          <option value="Referidos">Referidos</option>
+          <option value="EasyBroker">EasyBroker</option>
+          <option value="Proppit">Proppit</option>
+          <option value="Remax">Remax</option>
+          <option value="Lona">Lona</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="label" for="tiempo">¿En cuánto tiempo planeas comprar?</label>
+        <select id="tiempo" name="tiempo" required class="input-field">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Inmediato">Inmediato</option>
+          <option value="1 a 3 meses">1 a 3 meses</option>
+          <option value="4 a 6 meses">4 a 6 meses</option>
+          <option value="Más de 6 meses">Más de 6 meses</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="label" for="comentarios">Comentarios adicionales</label>
+        <textarea id="comentarios" name="comentarios" class="input-field" placeholder="Escribe tus comentarios aquí"></textarea>
+      </div>
+
+      <div>
+        <button type="submit" class="submit-btn">Enviar</button>
+      </div>
+    </form>
+
+    <!-- Mensaje de éxito o error -->
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    // Función para enviar los datos del formulario a Google Sheets
+    document.getElementById("registroForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Obtener los datos del formulario
+      const formData = new FormData(event.target);
+
+      // Realizar la solicitud a Google Apps Script
+      fetch("https://script.google.com/macros/s/AKfycbwvVx28TONBRyXJalzfraj8OErDPRrcVQAtll7sTGBWQKbDagUDRk6amr6QHJjsd-PF/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Mostrar mensaje de éxito
+          document.getElementById("message").innerHTML = "Registro enviado con éxito!";
+          document.getElementById("message").classList.add("success");
+        } else {
+          // Mostrar mensaje de error
+          document.getElementById("message").innerHTML = "Error al enviar el formulario.";
+          document.getElementById("message").classList.add("error");
+        }
+
+        // Limpiar el formulario después de enviar
+        event.target.reset();
+
+        // Mostrar el mensaje por 3 segundos y luego ocultarlo
+        setTimeout(() => {
+          document.getElementById("message").innerHTML = "";
+        }, 3000);
+      })
+      .catch(error => {
+        // Mostrar error en caso de fallo en la conexión
+        document.getElementById("message").innerHTML = "Error en la conexión.";
+        document.getElementById("message").classList.add("error");
+      });
+    });
+  </script>
+</body>
+</html>
