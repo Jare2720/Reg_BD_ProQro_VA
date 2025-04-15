@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Formulario de Registro de Clientes</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -75,8 +75,9 @@
     <div class="flex justify-between items-center">
       <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Logo%20ProQro.png" alt="Logo ProQro" class="w-32">
       <div class="text-right text-sm">
-        <p>Servicio de Asesoría Inmobiliaria</p>
-        <p class="text-sm italic">Juntos encontraremos el hogar de tus sueños!</p>
+        <p>SERVICIO de ASESORÍA</p>
+        <p>INMOBILIARIA</p>
+        <p class="italic">Juntos encontraremos el hogar de tus sueños!</p>
       </div>
     </div>
   </header>
@@ -85,22 +86,22 @@
     <form id="registroForm">
       <div>
         <label class="label" for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" required class="input-field" placeholder="Escribe tu nombre">
+        <input type="text" id="nombre" name="Nombre" required class="input-field" placeholder="Escribe tu nombre">
       </div>
 
       <div>
         <label class="label" for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="telefono" required class="input-field" placeholder="Escribe tu teléfono">
+        <input type="tel" id="telefono" name="Telefono" required class="input-field" placeholder="Escribe tu teléfono">
       </div>
 
       <div>
         <label class="label" for="correo">Correo electrónico</label>
-        <input type="email" id="correo" name="correo" required class="input-field" placeholder="Escribe tu correo electrónico">
+        <input type="email" id="correo" name="Correo" required class="input-field" placeholder="Escribe tu correo electrónico">
       </div>
 
       <div>
         <label class="label" for="tipo">Tipo de propiedad</label>
-        <select id="tipo" name="tipo" required class="input-field">
+        <select id="tipo" name="Tipo de Propiedad" required class="input-field">
           <option value="" disabled selected>Selecciona una opción</option>
           <option value="Casa">Casa</option>
           <option value="Departamento">Departamento</option>
@@ -112,12 +113,12 @@
 
       <div>
         <label class="label" for="zona">Zona de interés</label>
-        <input type="text" id="zona" name="zona" required class="input-field" placeholder="Escribe la zona de interés">
+        <input type="text" id="zona" name="Zona de Interés" required class="input-field" placeholder="Escribe la zona de interés">
       </div>
 
       <div>
         <label class="label" for="presupuesto">Presupuesto</label>
-        <select id="presupuesto" name="presupuesto" required class="input-field">
+        <select id="presupuesto" name="Presupuesto" required class="input-field">
           <option value="" disabled selected>Selecciona una opción</option>
           <option value="Hasta $1M">Hasta $1M</option>
           <option value="$1M - $2M">$1M - $2M</option>
@@ -128,7 +129,7 @@
 
       <div>
         <label class="label" for="origen">¿Cómo te enteraste de nosotros?</label>
-        <select id="origen" name="origen" required class="input-field">
+        <select id="origen" name="Medio" required class="input-field">
           <option value="" disabled selected>Selecciona una opción</option>
           <option value="Facebook">Facebook</option>
           <option value="Instagram">Instagram</option>
@@ -142,29 +143,29 @@
       </div>
 
       <div>
-  <label class="label" for="objetivo">¿Buscas para vivir o invertir?</label>
-  <select id="objetivo" name="Objetivo" required class="input-field">
-    <option value="" disabled selected>Selecciona una opción</option>
-    <option value="Vivir">Vivir</option>
-    <option value="Invertir">Invertir</option>
-    <option value="Ambos">Ambos</option>
-  </select>
-</div>
+        <label class="label" for="objetivo">¿Buscas para vivir o invertir?</label>
+        <select id="objetivo" name="Objetivo" required class="input-field">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Vivir">Vivir</option>
+          <option value="Invertir">Invertir</option>
+          <option value="Ambos">Ambos</option>
+        </select>
+      </div>
 
       <div>
-  <label class="label" for="tiempo">¿En cuánto tiempo planeas comprar?</label>
-  <select id="tiempo" name="Tiempo de Compra" required class="input-field">
-    <option value="" disabled selected>Selecciona una opción</option>
-    <option value="Inmediato">Inmediato</option>
-    <option value="1 a 3 meses">1 a 3 meses</option>
-    <option value="4 a 6 meses">4 a 6 meses</option>
-    <option value="Más de 6 meses">Más de 6 meses</option>
-  </select>
-</div>
+        <label class="label" for="tiempo">¿En cuánto tiempo planeas comprar?</label>
+        <select id="tiempo" name="Tiempo de Compra" required class="input-field">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Inmediato">Inmediato</option>
+          <option value="1 a 3 meses">1 a 3 meses</option>
+          <option value="4 a 6 meses">4 a 6 meses</option>
+          <option value="Más de 6 meses">Más de 6 meses</option>
+        </select>
+      </div>
 
       <div>
         <label class="label" for="comentarios">Comentarios adicionales</label>
-        <textarea id="comentarios" name="comentarios" class="input-field" placeholder="Escribe tus comentarios aquí"></textarea>
+        <textarea id="comentarios" name="Comentarios" class="input-field" placeholder="Escribe tus comentarios aquí"></textarea>
       </div>
 
       <div>
@@ -186,24 +187,28 @@
       })
       .then(response => response.json())
       .then(data => {
+        const messageBox = document.getElementById("message");
         if (data.success) {
-          document.getElementById("message").innerHTML = "Registro enviado con éxito!";
-          document.getElementById("message").classList.add("success");
+          messageBox.innerHTML = "Registro enviado con éxito!";
+          messageBox.className = "message success";
         } else {
-          document.getElementById("message").innerHTML = "Error al enviar el formulario.";
-          document.getElementById("message").classList.add("error");
+          messageBox.innerHTML = "Error al enviar el formulario.";
+          messageBox.className = "message error";
         }
         event.target.reset();
         setTimeout(() => {
-          document.getElementById("message").innerHTML = "";
+          messageBox.innerHTML = "";
+          messageBox.className = "message";
         }, 3000);
       })
       .catch(error => {
-        document.getElementById("message").innerHTML = "Error en la conexión.";
-        document.getElementById("message").classList.add("error");
+        const messageBox = document.getElementById("message");
+        messageBox.innerHTML = "Error en la conexión.";
+        messageBox.className = "message error";
       });
     });
   </script>
 </body>
 </html>
+
 
