@@ -4,16 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Formulario de Registro de Clientes</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
     header {
       background-color: #003366;
       color: white;
       padding: 20px;
     }
-
     .form-container {
       background-color: #f3f4f6;
       padding: 20px;
@@ -21,7 +18,6 @@
       max-width: 600px;
       margin: 0 auto;
     }
-
     .input-field {
       width: 100%;
       padding: 10px;
@@ -30,7 +26,6 @@
       border-radius: 5px;
       background-color: white;
     }
-
     .submit-btn {
       width: 100%;
       padding: 10px;
@@ -40,28 +35,23 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
     .submit-btn:hover {
       background-color: #002244;
     }
-
     .message {
       text-align: center;
       padding: 10px;
       border-radius: 5px;
       margin-top: 20px;
     }
-
     .message.success {
       background-color: #4CAF50;
       color: white;
     }
-
     .message.error {
       background-color: #F44336;
       color: white;
     }
-
     .label {
       font-weight: bold;
       display: block;
@@ -70,14 +60,13 @@
   </style>
 </head>
 <body>
-
   <header>
     <div class="flex justify-between items-center">
       <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Logo%20ProQro.png" alt="Logo ProQro" class="w-32">
       <div class="text-right text-sm">
         <p>SERVICIO de ASESORÍA</p>
         <p>INMOBILIARIA</p>
-        <p class="italic">Juntos encontraremos el hogar de tus sueños!</p>
+        <p class="text-sm italic">Juntos encontraremos el hogar de tus sueños!</p>
       </div>
     </div>
   </header>
@@ -85,23 +74,23 @@
   <div class="form-container">
     <form id="registroForm">
       <div>
-        <label class="label" for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="Nombre" required class="input-field" placeholder="Escribe tu nombre">
+        <label class="label" for="Nombre">Nombre</label>
+        <input type="text" id="Nombre" name="Nombre" required class="input-field" placeholder="Escribe tu nombre" />
       </div>
 
       <div>
-        <label class="label" for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="Telefono" required class="input-field" placeholder="Escribe tu teléfono">
+        <label class="label" for="Telefono">Teléfono</label>
+        <input type="tel" id="Telefono" name="Telefono" required class="input-field" placeholder="Escribe tu teléfono" />
       </div>
 
       <div>
-        <label class="label" for="correo">Correo electrónico</label>
-        <input type="email" id="correo" name="Correo" required class="input-field" placeholder="Escribe tu correo electrónico">
+        <label class="label" for="Correo">Correo electrónico</label>
+        <input type="email" id="Correo" name="Correo" required class="input-field" placeholder="Escribe tu correo electrónico" />
       </div>
 
       <div>
-        <label class="label" for="tipo">Tipo de propiedad</label>
-        <select id="tipo" name="Tipo de Propiedad" required class="input-field">
+        <label class="label" for="Tipo">Tipo de propiedad</label>
+        <select id="Tipo" name="Tipo de Propiedad" required class="input-field">
           <option value="" disabled selected>Selecciona una opción</option>
           <option value="Casa">Casa</option>
           <option value="Departamento">Departamento</option>
@@ -112,13 +101,13 @@
       </div>
 
       <div>
-        <label class="label" for="zona">Zona de interés</label>
-        <input type="text" id="zona" name="Zona de Interés" required class="input-field" placeholder="Escribe la zona de interés">
+        <label class="label" for="Zona">Zona de interés</label>
+        <input type="text" id="Zona" name="Zona de Interés" required class="input-field" placeholder="Escribe la zona de interés" />
       </div>
 
       <div>
-        <label class="label" for="presupuesto">Presupuesto</label>
-        <select id="presupuesto" name="Presupuesto" required class="input-field">
+        <label class="label" for="Presupuesto">Presupuesto</label>
+        <select id="Presupuesto" name="Presupuesto" required class="input-field">
           <option value="" disabled selected>Selecciona una opción</option>
           <option value="Hasta $1M">Hasta $1M</option>
           <option value="$1M - $2M">$1M - $2M</option>
@@ -128,8 +117,8 @@
       </div>
 
       <div>
-        <label class="label" for="origen">¿Cómo te enteraste de nosotros?</label>
-        <select id="origen" name="Medio" required class="input-field">
+        <label class="label" for="Medio">¿Cómo te enteraste de nosotros?</label>
+        <select id="Medio" name="Medio" required class="input-field">
           <option value="" disabled selected>Selecciona una opción</option>
           <option value="Facebook">Facebook</option>
           <option value="Instagram">Instagram</option>
@@ -143,8 +132,8 @@
       </div>
 
       <div>
-        <label class="label" for="objetivo">¿Buscas para vivir o invertir?</label>
-        <select id="objetivo" name="Objetivo" required class="input-field">
+        <label class="label" for="Objetivo">¿Buscas para vivir o invertir?</label>
+        <select id="Objetivo" name="Objetivo" required class="input-field">
           <option value="" disabled selected>Selecciona una opción</option>
           <option value="Vivir">Vivir</option>
           <option value="Invertir">Invertir</option>
@@ -153,8 +142,8 @@
       </div>
 
       <div>
-        <label class="label" for="tiempo">¿En cuánto tiempo planeas comprar?</label>
-        <select id="tiempo" name="Tiempo de Compra" required class="input-field">
+        <label class="label" for="Tiempo">¿En cuánto tiempo planeas comprar?</label>
+        <select id="Tiempo" name="Tiempo de Compra" required class="input-field">
           <option value="" disabled selected>Selecciona una opción</option>
           <option value="Inmediato">Inmediato</option>
           <option value="1 a 3 meses">1 a 3 meses</option>
@@ -164,8 +153,8 @@
       </div>
 
       <div>
-        <label class="label" for="comentarios">Comentarios adicionales</label>
-        <textarea id="comentarios" name="Comentarios" class="input-field" placeholder="Escribe tus comentarios aquí"></textarea>
+        <label class="label" for="Comentarios">Comentarios adicionales</label>
+        <textarea id="Comentarios" name="Comentarios" class="input-field" placeholder="Escribe tus comentarios aquí"></textarea>
       </div>
 
       <div>
@@ -187,28 +176,26 @@
       })
       .then(response => response.json())
       .then(data => {
-        const messageBox = document.getElementById("message");
+        const messageDiv = document.getElementById("message");
         if (data.success) {
-          messageBox.innerHTML = "Registro enviado con éxito!";
-          messageBox.className = "message success";
+          messageDiv.innerHTML = "¡Registro enviado con éxito!";
+          messageDiv.className = "message success";
         } else {
-          messageBox.innerHTML = "Error al enviar el formulario.";
-          messageBox.className = "message error";
+          messageDiv.innerHTML = "Error al enviar el formulario.";
+          messageDiv.className = "message error";
         }
         event.target.reset();
         setTimeout(() => {
-          messageBox.innerHTML = "";
-          messageBox.className = "message";
+          messageDiv.innerHTML = "";
+          messageDiv.className = "message";
         }, 3000);
       })
       .catch(error => {
-        const messageBox = document.getElementById("message");
-        messageBox.innerHTML = "Error en la conexión.";
-        messageBox.className = "message error";
+        const messageDiv = document.getElementById("message");
+        messageDiv.innerHTML = "Error en la conexión.";
+        messageDiv.className = "message error";
       });
     });
   </script>
 </body>
 </html>
-
-
