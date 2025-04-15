@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario de Registro | Proyectate en Querétaro</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Encabezado con fondo azul oscuro */
+    .header-bg {
+      background-color: #0A3D91; /* Azul oscuro */
+    }
+
+    /* Estilo para el texto animado */
+    .animacion-diagonal {
+      animation: diagonalAnim 4s ease-in-out infinite;
+    }
+
+    @keyframes diagonalAnim {
+      0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(20px) translateY(20px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0) translateY(0);
+        opacity: 0;
+      }
+    }
+
+    /* Evitar superposición de texto y campos */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #4A4A4A;
+    }
+
+    input, select, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Ajustes para el área de comentarios */
+    textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    /* Estilos del botón de enviar */
+    .submit-btn {
+      background-color: #0A3D91; 
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 1rem;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #083A6B; /* Efecto hover */
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header con logo a la izquierda y texto animado a la derecha -->
+  <header class="flex items-center justify-between bg-header-bg p-4">
+    <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Logo%20ProQro.png" alt="Logo Proyectate en Querétaro" class="h-12">
+    <div class="text-white text-center ml-4">
+      <span class="text-xl font-semibold">Servicio de Asesoría Inmobiliaria</span>
+      <br>
+      <span class="text-sm font-medium animacion-diagonal">Juntos encontraremos el hogar de tus sueños!</span>
+    </div>
+  </header>
+
+  <!-- Imagen de Portada -->
+  <div class="w-full">
+    <img src="https://raw.githubusercontent.com/Jare2720/Reg_BD_ProQro_VA/main/Portada%20ppal%20ProQro.jpg" alt="Portada ProQro" class="w-full object-cover max-h-[250px] opacity-80">
+  </div>
+
+  <!-- Formulario -->
+  <main class="max-w-lg mx-auto mt-6 bg-white p-6 rounded-2xl shadow-lg">
+    <h1 class="text-2xl font-bold mb-6 text-center text-blue-800">Registro de Clientes</h1>
+
+    <form id="clienteForm" class="space-y-6" method="POST" action="https://script.google.com/macros/s/AKfycbwvVx28TONBRyXJalzfraj8OErDPRrcVQAtll7sTGBWQKbDagUDRk6amr6QHJjsd-PF/exec">
+      
+      <!-- Nombre completo -->
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required>
+      </div>
+
+      <!-- Correo -->
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+
+      <!-- Tipo de propiedad -->
+      <div class="form-group">
+        <label for="tipo">Tipo de propiedad</label>
+        <select id="tipo" name="tipo" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Casa">Casa</option>
+          <option value="Departamento">Departamento</option>
+          <option value="Terreno">Terreno</option>
+          <option value="Comercial">Comercial</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <!-- Zona de interés -->
+      <div class="form-group">
+        <label for="zona">Zona de interés</label>
+        <input type="text" id="zona" name="zona" required>
+      </div>
+
+      <!-- Presupuesto -->
+      <div class="form-group">
+        <label for="presupuesto">Presupuesto</label>
+        <select id="presupuesto" name="presupuesto" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Hasta $1M">Hasta $1M</option>
+          <option value="$1M - $2M">$1M - $2M</option>
+          <option value="$2M - $3M">$2M - $3M</option>
+          <option value="Más de $3M">Más de $3M</option>
+        </select>
+      </div>
+
+      <!-- ¿Cómo te enteraste de nosotros? -->
+      <div class="form-group">
+        <label for="origen">¿Cómo te enteraste de nosotros?</label>
+        <select id="origen" name="origen" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Página Web">Página Web</option>
+          <option value="Referidos">Referidos</option>
+          <option value="EasyBroker">EasyBroker</option>
+          <option value="Proppit">Proppit</option>
+          <option value="Remax">Remax</option>
+          <option value="Lona">Lona</option>
+        </select>
+      </div>
+
+      <!-- ¿Buscas para vivir o invertir? -->
+      <div class="form-group">
+        <label for="motivo">¿Buscas para vivir o invertir?</label>
+        <select id="motivo" name="motivo" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Vivir">Vivir</option>
+          <option value="Invertir">Invertir</option>
+          <option value="Ambos">Ambos</option>
+        </select>
+      </div>
+
+      <!-- Comentarios adicionales -->
+      <div class="form-group">
+        <label for="comentarios">Comentarios adicionales</label>
+        <textarea id="comentarios" name="comentarios"></textarea>
+      </div>
+
+      <!-- Botón de enviar -->
+      <div class="text-center">
+        <button type="submit" class="submit-btn">Enviar</button>
+      </div>
+    </form>
+  </main>
+
+</body>
+</html>
